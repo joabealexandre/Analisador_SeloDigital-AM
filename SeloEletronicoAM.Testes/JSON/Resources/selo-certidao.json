@@ -1,0 +1,40 @@
+{
+    "selo":{
+       "idSelo":20879794,
+       "codSelo":"CERPRT005041OZE0XIKAD97QGG88",
+       "idCartorio":129,
+       "nomeCartorio":"6º Ofício de Protesto de Letras",
+       "cidadeCartorio":"Manaus",
+       "estadoCartorio":"AM",
+       "ato":"Certidão por nome",
+       "dataSelo":"2020-01-16",
+       "horaSelo":"09:15",
+       "codAtoTabelaAto":{
+          "codigoAto":"030061",
+          "codigoTabelaCusta":"0320171003",
+          "emolumento":40.06,
+          "farpam":2.01,
+          "fundpam":2.01,
+          "fundpge":1.20,
+          "funetj":4.01,
+          "iss":2.01,
+          "computacao":0.00,
+          "valorSelo":1.90,
+          "valorAto":53.20
+       },
+       "especialidade":"Protestos e Letras",
+       "escrevente":"Kaue Iago Agra Magalhaes",
+       "infoIsento":{
+          "isento":true,
+          "motivoGratuitoIsento":null
+       },
+       "cancelado":false,
+       "indeferido":false,
+       "motivoIndeferimento":null,
+       "identificadorDoAnexo":null,
+       "motivoDaIsencao":null
+    },
+    "atosComplementares":[
+ 
+    ]
+ }

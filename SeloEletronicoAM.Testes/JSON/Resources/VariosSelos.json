@@ -1,0 +1,50 @@
+[
+  {
+    "selo": {
+      "codSelo": "CANPRT0050410733RIKHZUTI0G41",
+      "codAtoTabelaAto": {
+        "emolumento": 88.8,
+        "farpam": 3.35,
+        "fundpam": 3.35,
+        "fundpge": 2.01,
+        "funetj": 6.7
+      }
+    }
+  },
+  {
+    "selo": {
+      "codSelo": "CANPRT005041Y89ECTTYBZ83UA09",
+      "codAtoTabelaAto": {
+        "emolumento": 88.8,
+        "farpam": 3.35,
+        "fundpam": 3.35,
+        "fundpge": 2.01,
+        "funetj": 6.7
+      }
+    }
+  },
+  {
+    "selo": {
+      "codSelo": "CANPRT005041VN53SNTN7JWT8I64",
+      "codAtoTabelaAto": {
+        "emolumento": 0.0,
+        "farpam": 0.0,
+        "fundpam": 0.0,
+        "fundpge": 0.0,
+        "funetj": 0.0
+      }
+    }
+  },
+  {
+    "selo": {
+      "codSelo": "CANPRT005041IRCTNZ2I9C3QH031",
+      "codAtoTabelaAto": {
+        "emolumento": 0.0,
+        "farpam": 0.0,
+        "fundpam": 0.0,
+        "fundpge": 0.0,
+        "funetj": 0.0
+      }
+    }
+  }
+]
