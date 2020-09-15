@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeloEletronicoAM", "SeloEle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeloEletronicoAM.Testes", "SeloEletronicoAM.Testes\SeloEletronicoAM.Testes.csproj", "{F4D72671-728D-4460-B769-35184C4E797B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeloEletronicoAM.WinForms", "SeloEletronicoAM.WinForms\SeloEletronicoAM.WinForms.csproj", "{A6869855-61B3-417C-9C04-ACAFBCCD7B13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeloEletronicoAM.WinForms", "SeloEletronicoAM.WinForms\SeloEletronicoAM.WinForms.csproj", "{A6869855-61B3-417C-9C04-ACAFBCCD7B13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelosAM.ConsoleApp", "SeloEletronicoAM.ConsoleApp\SelosAM.ConsoleApp.csproj", "{F100A4F9-7090-49DE-BFCC-8DE854EC72DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelosAM.ConsoleApp", "SeloEletronicoAM.ConsoleApp\SelosAM.ConsoleApp.csproj", "{F100A4F9-7090-49DE-BFCC-8DE854EC72DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeloEletronicoAM.WPF", "SeloEletronicoAM.WPF\SeloEletronicoAM.WPF.csproj", "{440EFA82-6266-4392-9EFE-85DFA411F55F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F100A4F9-7090-49DE-BFCC-8DE854EC72DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F100A4F9-7090-49DE-BFCC-8DE854EC72DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F100A4F9-7090-49DE-BFCC-8DE854EC72DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{440EFA82-6266-4392-9EFE-85DFA411F55F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{440EFA82-6266-4392-9EFE-85DFA411F55F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{440EFA82-6266-4392-9EFE-85DFA411F55F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{440EFA82-6266-4392-9EFE-85DFA411F55F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
