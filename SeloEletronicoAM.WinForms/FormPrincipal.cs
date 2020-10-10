@@ -31,7 +31,7 @@ namespace SeloEletronicoAM.WinForms
 
         private void form1_Load(object sender, EventArgs e)
         {
-            AjustarVisualizacaoFormulario();
+            AjustarVisualizacaoFormulario(sender, e);
         }
 
         private async void btnConfirmar_Click(object sender, EventArgs e)
@@ -130,7 +130,7 @@ namespace SeloEletronicoAM.WinForms
         {
             ofd_AbrirArquivo.Filter = "Arquivo CSV/JSON| *.csv;*.json";
             ofd_AbrirArquivo.ShowDialog();
-            textBox.Text = ofd_AbrirArquivo.FileName;
+            textBox.Text = ofd_AbrirArquivo.FileName == "openFileDialog1" ? string.Empty : ofd_AbrirArquivo.FileName;
             ofd_AbrirArquivo.Reset();
         }
 
@@ -140,7 +140,7 @@ namespace SeloEletronicoAM.WinForms
             txtSalvarArquivo1.Text = fbd_SaveFile.SelectedPath;
         }
 
-        private void AjustarVisualizacaoFormulario()
+        private void AjustarVisualizacaoFormulario(object sender, EventArgs e)
         {
             txtAbrirArquivo2.Enabled = !rb_ImportarCsvSeladora.Checked;
             btn_abrirArquivo2.Enabled = !rb_ImportarCsvSeladora.Checked;
@@ -149,6 +149,11 @@ namespace SeloEletronicoAM.WinForms
             {
                 PreencherInstrucoesImportarSeladora();
                 btnConfirmar.Text = "Importar";
+            }
+            else if(rbLerResumoArquivo.Checked)
+            {
+                PreencherInstrucoesResumoETotalizadores();
+                btnConfirmar.Text = "Resumo";
             }
             else
             {
@@ -162,7 +167,7 @@ namespace SeloEletronicoAM.WinForms
             txtOutput.Text = "Importar CSV da seladora \n" +
                             "Essa opção importa os selos diretamente da base de dados do tribunal.\n" +
                             "\n" +
-                            "Gere um arquivo CSV (utilizar o separador ;) utilizando o script sql disponibilizado na opção “Gerar script sql”.\n" +
+                            "Gere um arquivo CSV (utilizar o separador ;) utilizando o script sql disponibilizado na opção “Script sql”.\n" +
                             "\n" +
                             "*** Importar selos ***\n" +
                             "\n" +
@@ -186,6 +191,23 @@ namespace SeloEletronicoAM.WinForms
                             "4. Clique em “Comparar” e aguarde a conclusão da comparação.\n";
         }
 
+        private void PreencherInstrucoesResumoETotalizadores()
+        {
+            txtOutput.Text = "Resumo e Totalizadores do arquivo \n" +
+                            "Essa opção apresenta o resumo do conteúdo e os totalizadores dos encargos e fundos.\n" +
+                            "\n" +
+                            "O arquivo pode estar em formado json ou csv.\n" +
+                            "\n" +
+                            "*** Comparar selos ***\n" +
+                            "\n" +
+                            "1. Selecione o arquivo csv/json na primeira opção (\"Abrir arquivo 1\").\n" +
+                            "4. Clique em “Resumo” e aguarde a conclusão da análise.\n";
+        }
 
+        private void btnScriptSql_Click(object sender, EventArgs e)
+        {
+            var form = new FormScriptSql();
+            form.Show(this);
+        }
     }
 }

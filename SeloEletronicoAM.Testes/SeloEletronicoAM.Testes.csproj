@@ -11,6 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="CSV\Resources\SELOS-Apenas1Selo.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="xunit" Version="2.4.0" />
@@ -23,12 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="CSV\Resources\SELOS-Apenas1Selo.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Controllers\Resources\selo-certidao.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -38,10 +38,6 @@
     <None Update="JSON\Resources\VariosSelos.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="CSV\Resources\" />
   </ItemGroup>
 
 </Project>
