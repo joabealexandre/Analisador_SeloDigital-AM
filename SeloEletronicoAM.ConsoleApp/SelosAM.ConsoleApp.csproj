@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\SeloEletronicoAM\SeloEletronicoAM.csproj" />
+    <ProjectReference Include="..\SeloEletronicoAM\SeloEletronicoAM.Core.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

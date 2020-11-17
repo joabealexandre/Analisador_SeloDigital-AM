@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SeloEletronicoAM\SeloEletronicoAM.csproj" />
+    <ProjectReference Include="..\SeloEletronicoAM\SeloEletronicoAM.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

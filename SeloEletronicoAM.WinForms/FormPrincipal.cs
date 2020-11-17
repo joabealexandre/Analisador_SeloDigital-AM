@@ -20,6 +20,7 @@ namespace SeloEletronicoAM.WinForms
         private readonly LeitorCSV _leitorCSV;
         private readonly LeitorJSON _leitorJSON;
         private readonly SeloController _seloCtrl;
+        private BackgroundWorker BackgroundWorker;
 
         public form1()
         {

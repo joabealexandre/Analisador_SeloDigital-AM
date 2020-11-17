@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SeloEletronicoAM\SeloEletronicoAM.csproj" />
+    <PackageReference Include="System.ComponentModel.EventBasedAsync" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SeloEletronicoAM\SeloEletronicoAM.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

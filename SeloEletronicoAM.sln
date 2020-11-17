@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeloEletronicoAM", "SeloEletronicoAM\SeloEletronicoAM.csproj", "{29D7A859-0516-4D33-80D8-79E778E17AE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeloEletronicoAM.Core", "SeloEletronicoAM\SeloEletronicoAM.Core.csproj", "{29D7A859-0516-4D33-80D8-79E778E17AE3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeloEletronicoAM.Testes", "SeloEletronicoAM.Testes\SeloEletronicoAM.Testes.csproj", "{F4D72671-728D-4460-B769-35184C4E797B}"
 EndProject
@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeloEletronicoAM.WinForms",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelosAM.ConsoleApp", "SeloEletronicoAM.ConsoleApp\SelosAM.ConsoleApp.csproj", "{F100A4F9-7090-49DE-BFCC-8DE854EC72DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeloEletronicoAM.WPF", "SeloEletronicoAM.WPF\SeloEletronicoAM.WPF.csproj", "{440EFA82-6266-4392-9EFE-85DFA411F55F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeloEletronicoAM.WPF", "SeloEletronicoAM.WPF\SeloEletronicoAM.WPF.csproj", "{440EFA82-6266-4392-9EFE-85DFA411F55F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

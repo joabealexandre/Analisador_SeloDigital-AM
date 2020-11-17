@@ -11,8 +11,8 @@ namespace SeloEletronicoAM.Controllers
 {
     public class SeloController
     {
-        private SeloAPI _apiSeladora = null;
-        private EscritorJSON _escritorJSON = null;
+        private SeloAPI _apiSeladora;
+        private EscritorJSON _escritorJSON;
 
         public SeloController(string url)
         {
@@ -113,17 +113,17 @@ namespace SeloEletronicoAM.Controllers
         }
 
         /// <summary>
-        /// Adiciona o cabeçalho do arquivo de análise CSV
+        /// Adiciona o cabeçalho do arquivo de análise CSV (Os encargos FARPAM E FUNETJ foram corrigidos para gerar o arquivo com os nomes atuais)
         /// </summary>
         /// <param name="csv">StringBuilder com conteúdo do arquivo csv</param>
         private void AdicionarCabecalhoCsv(StringBuilder csv)
         {
             var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11};{12};{13};{14}",
                                         "Codigo",
-                                        "Farpam 1", "Farpam 2", "Diferenca Farpam",
+                                        "F. Rcpnsd 1", "F. Rcpnsd 2", "Diferenca F. Rcpnsd",
                                         "Fundpam 1", "Fundpam 2", "Diferenca Fundpam",
                                         "Fundpge 1", "Fundpge 2", "Diferenca Fundpge",
-                                        "Funetj 1", "Funetj 2", "Diferenca Funetj",
+                                        "F. Ext. Jud 1", "F. Ext. Jud 2", "Diferenca F. Ext. Jud",
                                         "Isento 1", "Isento 2");
 
             csv.AppendLine(newLine);
