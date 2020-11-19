@@ -18,8 +18,8 @@ namespace SeloEletronicoAM.Models
         public decimal Fundpge { get; set; }
         [JsonPropertyName("funetj")]
         public decimal Funetj { get; set; }
-        //[JsonPropertyName("iss")]
-        //public decimal ISS { get; set; }
+        [JsonPropertyName("iss")]
+        public decimal ISS { get; set; }
         //[JsonPropertyName("computacao")]
         //public decimal Computacao { get; set; }
         [JsonPropertyName("valorSelo")]

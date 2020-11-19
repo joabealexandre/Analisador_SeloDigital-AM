@@ -37,6 +37,9 @@ namespace SeloEletronicoAM.WinForms
 
         private async void btnConfirmar_Click(object sender, EventArgs e)
         {
+            if (!Validar())
+                return;
+
             if (rb_ImportarCsvSeladora.Checked)
             {
                 await ImportarCsvSeladora();
@@ -49,6 +52,52 @@ namespace SeloEletronicoAM.WinForms
             {
                 CompararSelosSalvarJson();
             }
+            else if (rbLerResumoArquivo.Checked)
+            {
+
+            }
+        }
+
+        private bool Validar()
+        {
+            errorProvider1.Clear();
+            var status = true;
+
+            if (string.IsNullOrWhiteSpace(txtAbrirArquivo1.Text))
+                status = AdicionarErrorProvider(txtAbrirArquivo1, "Informe um arquivo");
+
+            if (!rbLerResumoArquivo.Checked && string.IsNullOrWhiteSpace(txtSalvarArquivo1.Text))
+                status = AdicionarErrorProvider(txtSalvarArquivo1, "Informe um diretório");
+
+            if (rbCompararSelosSalvarCsv.Checked || rbCompararSelosSalvarJson.Checked)
+            {
+                if (string.IsNullOrWhiteSpace(txtAbrirArquivo2.Text))
+                    status = AdicionarErrorProvider(txtAbrirArquivo2, "Informe um arquivo");
+
+                if (cmbOrigem1.SelectedIndex < 1)
+                    status = AdicionarErrorProvider(cmbOrigem1, "Informe um valor válido");
+
+                if (cmbOrigem2.SelectedIndex < 1)
+                    status = AdicionarErrorProvider(cmbOrigem2, "Informe um valor válido");
+
+                if (!status) // Se combos não preenchidos já retorna aqui
+                    return false;
+
+                if (cmbOrigem1.SelectedIndex > 0 && cmbOrigem1.SelectedIndex == cmbOrigem2.SelectedIndex)
+                {
+                    status = AdicionarErrorProvider(cmbOrigem1, "Selecione opções diferentes");
+                    status = AdicionarErrorProvider(cmbOrigem2, "Selecione opções diferentes");
+
+                }
+            }
+
+            return status;
+        }
+
+        private bool AdicionarErrorProvider(Control control, string message)
+        {
+            errorProvider1.SetError(control, message);
+            return false;
         }
 
         /// <summary>
@@ -110,10 +159,13 @@ namespace SeloEletronicoAM.WinForms
 
         public void CompararSelosExtrairAnalise()
         {
-            IList<Selo> selosUm = LerArquivoSelo(txtAbrirArquivo1.Text);
-            IList<Selo> selosDois = LerArquivoSelo(txtAbrirArquivo2.Text);
+            Dictionary<string, IList<Selo>> selos = new Dictionary<string, IList<Selo>>
+            {
+                { cmbOrigem1.SelectedItem.ToString(), LerArquivoSelo(txtAbrirArquivo1.Text) },
+                { cmbOrigem2.SelectedItem.ToString(), LerArquivoSelo(txtAbrirArquivo2.Text) },
+            };
 
-            var resultado = _seloCtrl.CompararSelosGerarCSV(selosUm, selosDois);
+            var resultado = _seloCtrl.CompararSelosGerarCSV(selos);
             File.WriteAllText($"{fbd_SaveFile.SelectedPath}\\selosDivergentes.csv", resultado);
         }
 
@@ -151,7 +203,7 @@ namespace SeloEletronicoAM.WinForms
                 PreencherInstrucoesImportarSeladora();
                 btnConfirmar.Text = "Importar";
             }
-            else if(rbLerResumoArquivo.Checked)
+            else if (rbLerResumoArquivo.Checked)
             {
                 PreencherInstrucoesResumoETotalizadores();
                 btnConfirmar.Text = "Resumo";

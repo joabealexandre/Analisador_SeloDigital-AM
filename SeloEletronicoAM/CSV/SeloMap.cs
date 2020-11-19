@@ -16,7 +16,8 @@ namespace SeloEletronicoAM.CSV
             Map(m => m.AtoTabela.Fundpam).Index(3);
             Map(m => m.AtoTabela.Fundpge).Index(4);
             Map(m => m.AtoTabela.Farpam).Index(5);
-            Map(m => m.InfoIsento.Isento).Index(6);
+            Map(m => m.AtoTabela.ISS).Index(6);
+            Map(m => m.InfoIsento.Isento).Index(7);
             //.TypeConverterOption.BooleanValues(true, true, "1", "Y")
             //.TypeConverterOption.BooleanValues(false, false, "0", "N");
         }

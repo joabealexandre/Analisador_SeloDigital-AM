@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.fbd_SaveFile = new System.Windows.Forms.FolderBrowserDialog();
@@ -48,12 +49,14 @@
             this.lbl_AbrirArquivo2 = new System.Windows.Forms.Label();
             this.txtAbrirArquivo2 = new System.Windows.Forms.TextBox();
             this.btnScriptSql = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbOrigem1 = new System.Windows.Forms.ComboBox();
+            this.cmbOrigem2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -254,29 +257,29 @@
             this.btnScriptSql.UseVisualStyleBackColor = false;
             this.btnScriptSql.Click += new System.EventHandler(this.btnScriptSql_Click);
             // 
-            // comboBox1
+            // cmbOrigem1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbOrigem1.FormattingEnabled = true;
+            this.cmbOrigem1.Items.AddRange(new object[] {
             "",
             "Cartório",
             "Tribunal"});
-            this.comboBox1.Location = new System.Drawing.Point(651, 230);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 11;
+            this.cmbOrigem1.Location = new System.Drawing.Point(651, 230);
+            this.cmbOrigem1.Name = "cmbOrigem1";
+            this.cmbOrigem1.Size = new System.Drawing.Size(121, 28);
+            this.cmbOrigem1.TabIndex = 11;
             // 
-            // comboBox2
+            // cmbOrigem2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbOrigem2.FormattingEnabled = true;
+            this.cmbOrigem2.Items.AddRange(new object[] {
             "",
             "Cartório",
             "Tribunal"});
-            this.comboBox2.Location = new System.Drawing.Point(651, 297);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 28);
-            this.comboBox2.TabIndex = 11;
+            this.cmbOrigem2.Location = new System.Drawing.Point(651, 297);
+            this.cmbOrigem2.Name = "cmbOrigem2";
+            this.cmbOrigem2.Size = new System.Drawing.Size(121, 28);
+            this.cmbOrigem2.TabIndex = 11;
             // 
             // label3
             // 
@@ -300,10 +303,14 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(33, 607);
+            this.progressBar.Location = new System.Drawing.Point(99, 607);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(595, 23);
             this.progressBar.TabIndex = 13;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // form1
             // 
@@ -313,8 +320,8 @@
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbOrigem2);
+            this.Controls.Add(this.cmbOrigem1);
             this.Controls.Add(this.btnScriptSql);
             this.Controls.Add(this.txtAbrirArquivo2);
             this.Controls.Add(this.lbl_AbrirArquivo2);
@@ -336,6 +343,7 @@
             this.Load += new System.EventHandler(this.form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,11 +372,12 @@
         private System.Windows.Forms.TextBox txtAbrirArquivo2;
         private System.Windows.Forms.Button btnScriptSql;
         private System.Windows.Forms.RadioButton rbLerResumoArquivo;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbOrigem1;
+        private System.Windows.Forms.ComboBox cmbOrigem2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
