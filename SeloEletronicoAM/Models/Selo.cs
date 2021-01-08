@@ -38,9 +38,9 @@ namespace SeloEletronicoAM.Models
         public decimal TotalValorFundos(bool validarIsento = true)
         {
             if (validarIsento)
-                return InfoIsento.Isento ? 0 : AtoTabela.Farpam + AtoTabela.Fundpam + AtoTabela.Fundpge + AtoTabela.Funetj;
+                return InfoIsento.Isento ? 0 : AtoTabela.Farpam + AtoTabela.Fundpam + AtoTabela.Fundpge + AtoTabela.Funetj + AtoTabela.ValorSelo;
             else
-                return AtoTabela.Farpam + AtoTabela.Fundpam + AtoTabela.Fundpge + AtoTabela.Funetj;
+                return AtoTabela.Farpam + AtoTabela.Fundpam + AtoTabela.Fundpge + AtoTabela.Funetj + AtoTabela.ValorSelo;
         }
     }
 

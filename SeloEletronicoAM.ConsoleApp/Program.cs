@@ -103,8 +103,8 @@ namespace SelosAM.ConsoleApp
             IList<Selo> selosUm = LerArquivoSelo("Informe o caminho do 1º arquivo (JSON/CSV)");
             IList<Selo> selosDois = LerArquivoSelo("Informe o caminho do 2º arquivo (JSON/CSV)");
 
-            var resultado = seloCtrl.CompararSelosGerarCSV(selosUm, selosDois);
-            File.WriteAllText("selosDivergentes.csv", resultado);
+            //var resultado = seloCtrl.CompararSelosGerarCSV(selosUm, selosDois);
+            //File.WriteAllText("selosDivergentes.csv", resultado);
         }
 
         public static async Task MainAsync()

@@ -1,3 +1,4 @@
+using SeloEletronicoAM.WinForms.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace SeloEletronicoAM.WinForms
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form1());
+            Application.Run(new FrmMain());
         }
     }
 }

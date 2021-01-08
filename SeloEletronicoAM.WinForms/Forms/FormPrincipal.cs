@@ -13,16 +13,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SeloEletronicoAM.WinForms
+namespace SeloEletronicoAM.WinForms.Forms
 {
-    public partial class form1 : Form
+    public partial class FrmMain : Form
     {
         private readonly LeitorCSV _leitorCSV;
         private readonly LeitorJSON _leitorJSON;
         private readonly SeloController _seloCtrl;
         private BackgroundWorker BackgroundWorker;
 
-        public form1()
+        public FrmMain()
         {
             InitializeComponent();
             _leitorCSV = new LeitorCSV();
@@ -33,6 +33,7 @@ namespace SeloEletronicoAM.WinForms
         private void form1_Load(object sender, EventArgs e)
         {
             AjustarVisualizacaoFormulario(sender, e);
+
         }
 
         private async void btnConfirmar_Click(object sender, EventArgs e)
@@ -202,16 +203,19 @@ namespace SeloEletronicoAM.WinForms
             {
                 PreencherInstrucoesImportarSeladora();
                 btnConfirmar.Text = "Importar";
+                HabilitarDesabilitarCheckBoxEncargos(false);
             }
             else if (rbLerResumoArquivo.Checked)
             {
                 PreencherInstrucoesResumoETotalizadores();
                 btnConfirmar.Text = "Resumo";
+                HabilitarDesabilitarCheckBoxEncargos(false);
             }
             else
             {
                 PreencherInstrucoesCompararSelos();
                 btnConfirmar.Text = "Comparar";
+                HabilitarDesabilitarCheckBoxEncargos(true);
             }
         }
 
@@ -261,6 +265,19 @@ namespace SeloEletronicoAM.WinForms
         {
             var form = new FormScriptSql();
             form.Show(this);
+        }
+
+        private void HabilitarDesabilitarCheckBoxEncargos(bool enabled)
+        {
+            chkComputacao.Enabled = enabled;
+            chkEmolumentos.Enabled = enabled;
+            chkNotificacao.Enabled = enabled;
+            chkFExtrajudicial.Enabled = enabled;
+            chkFRcnpsd.Enabled = enabled;
+            chkFundpam.Enabled = enabled;
+            chkFunetj.Enabled = enabled;
+            chkISSQN.Enabled = enabled;
+            chkSelo.Enabled = enabled;
         }
     }
 }

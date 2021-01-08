@@ -84,6 +84,8 @@ namespace SeloEletronicoAM.Controllers
             decimal totalFundpge = 0;
             decimal totalFunetj = 0;
             decimal totalissqn = 0;
+            decimal totalSelo = 0;
+
             RetornaDicionariosComSelos(selos1, selos2, out Dictionary<string, Selo> dictioMenor, out Dictionary<string, Selo> dictioMaior);
 
             foreach (KeyValuePair<string, Selo> item in dictioMenor)
@@ -91,13 +93,13 @@ namespace SeloEletronicoAM.Controllers
                 /* TO DO: Validar se não houver selo correspondente no dicionário maior*/
                 if (!ValorFundosIguais(item.Value, dictioMaior[item.Key]))
                 {
-                    AdicionarFundoArquivoCsv(csv, item.Value, dictioMaior[item.Key], totalFarpam, totalFundpam, totalFundpge, totalFunetj, totalissqn);
+                    AdicionarFundoArquivoCsv(csv, item.Value, dictioMaior[item.Key], totalFarpam, totalFundpam, totalFundpge, totalFunetj, totalissqn, totalSelo);
                 }
             }
             return csv.ToString();
         }
 
-        public void AdicionarFundoArquivoCsv(StringBuilder csv, Selo selo1, Selo selo2, decimal totalFarpam, decimal totalFundpam, decimal totalFundpge, decimal totalFunetj, decimal totalissqn)
+        public void AdicionarFundoArquivoCsv(StringBuilder csv, Selo selo1, Selo selo2, decimal totalFarpam, decimal totalFundpam, decimal totalFundpge, decimal totalFunetj, decimal totalissqn, decimal totalSelo)
         {
             if (csv.Length == 0)
                 AdicionarCabecalhoCsv(csv);
@@ -107,14 +109,16 @@ namespace SeloEletronicoAM.Controllers
             totalFundpge = Math.Abs(selo1.AtoTabela.Fundpge - selo2.AtoTabela.Fundpge);
             totalFunetj = Math.Abs(selo1.AtoTabela.Funetj - selo2.AtoTabela.Funetj);
             totalissqn = Math.Abs(selo1.AtoTabela.ISS - selo2.AtoTabela.ISS);
+            totalSelo = Math.Abs(selo1.AtoTabela.ValorSelo - selo2.AtoTabela.ValorSelo);
 
-            var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11};{12};{13};{14};{15};{16};{17}",
+            var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11};{12};{13};{14};{15};{16};{17};{18};{19};{20};",
                                         selo1.Codigo,
                                         selo1.AtoTabela.Farpam, selo2.AtoTabela.Farpam, totalFarpam,
                                         selo1.AtoTabela.Fundpam, selo2.AtoTabela.Fundpam, totalFundpam,
                                         selo1.AtoTabela.Fundpge, selo2.AtoTabela.Fundpge, totalFundpge,
                                         selo1.AtoTabela.Funetj, selo2.AtoTabela.Funetj, totalFunetj,
                                         selo1.AtoTabela.ISS, selo2.AtoTabela.ISS, totalissqn,
+                                        selo1.AtoTabela.ValorSelo, selo2.AtoTabela.ValorSelo, totalSelo,
                                         selo1.InfoIsento.Isento, selo2.InfoIsento.Isento);
             csv.AppendLine(newLine);
         }
@@ -125,13 +129,14 @@ namespace SeloEletronicoAM.Controllers
         /// <param name="csv">StringBuilder com conteúdo do arquivo csv</param>
         private void AdicionarCabecalhoCsv(StringBuilder csv)
         {
-            var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11};{12};{13};{14};{15};{16};{17}",
+            var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11};{12};{13};{14};{15};{16};{17};{18};{19};{20};",
                                         "Codigo",
                                         "F. Rcpnsd 1", "F. Rcpnsd 2", "Diferenca F. Rcpnsd",
                                         "Fundpam 1", "Fundpam 2", "Diferenca Fundpam",
                                         "Fundpge 1", "Fundpge 2", "Diferenca Fundpge",
                                         "F. Ext. Jud 1", "F. Ext. Jud 2", "Diferenca F. Ext. Jud",
                                         "ISSQN 1", "ISSQN 2", "Diferenca ISSQN",
+                                        "Selo 1", "Selo 2", "Diferenca Selo",
                                         "Isento 1", "Isento 2");
 
             csv.AppendLine(newLine);
